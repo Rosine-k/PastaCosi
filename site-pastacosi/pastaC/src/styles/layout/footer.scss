@@ -1,0 +1,109 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  // width: 100%;
+  overflow-x: hidden; 
+  
+}
+
+:root {
+  color-scheme: only light;
+  background: #F8F1E3;
+  color: #000000;
+}
+
+
+div {
+  box-sizing: border-box;
+}
+
+footer {
+  width: 100%;
+}
+
+.footer {
+  background-color: #381e11;
+  color: white;
+  padding: 20px 0;
+  margin-top: 80px;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex: 1;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-concepteur {
+  font-style: italic;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* ============================= */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-concepteur {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+/* ============================= */
+/*  Tablette (600px - 1024px) */
+/* ============================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-concepteur {
+    text-align: center;
+    font-size: 12px;
+  }
+}

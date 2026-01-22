@@ -1,0 +1,22 @@
+{
+  "name": "pastac",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.97.2",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.12.0",
+    "swiper": "^12.0.3",
+    "yet-another-react-lightbox": "^3.28.0"
+  }
+}
