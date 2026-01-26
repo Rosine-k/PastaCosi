@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import FaqImg from "../../assets/faq3.jpg";
+// import FaqImg from "../../assets/faq3.jpg";
 
 const faqData = [
   // {
@@ -27,7 +27,7 @@ const faqData = [
     answer: "La cuisine ferme à 00h20 la semaine de dimanche à jeudi  et 1h20 du matin le vendredi et samedi.",
   },
   {
-    question: "Comment puis-je réserver une table chez Divine ?",
+    question: "Comment puis-je réserver une table chez Pasta Cosi?",
     answer: "Les réservations se font facilement via notre site internet. Pour toute demande de groupe (plus de 15 personnes), merci de nous contacter directement par téléphone.",
   },
   {
@@ -74,7 +74,7 @@ export default function FaqCarousel() {
           <SwiperSlide key={index}>
             <div className="faq-card">
               
-              <img src={FaqImg} alt="fond carte" className="faq-bg-img" />
+              {/* <img src={FaqImg} alt="fond carte" className="faq-bg-img" /> */}
               
               <h3 className="faq-question">{item.question}</h3>
               <p className="faq-answer">{item.answer}</p>

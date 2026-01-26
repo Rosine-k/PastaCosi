@@ -1,6 +1,6 @@
 import React from 'react';
-import imgMenu from "../../assets/menu.jpg";
-import imgReservation from "../../assets/resa.jpg";
+import imgMenu from "../../assets/menuHome1.jpg";
+import imgReservation from "../../assets/resaHome.jpg";
 import { Link } from 'react-router-dom';
 
 function NavigationCards() {

@@ -1,6 +1,7 @@
+import React from 'react';
 import Header from "../../layout/Header/header";
 import Banner from "../../components/Banner/banner";
-import bannerMenu from "../../assets/menu.jpg";
+import bannerMenu from "../../assets/menuHome1.jpg";
 import Footer from "../../layout/Footer/footer";
 import Galerie from "../../components/Galerie/galerie";
 import { Link } from "react-router-dom";
@@ -12,14 +13,7 @@ import photo5 from "../../assets/galerie/photo5.jpg";
 import photo6 from "../../assets/galerie/photo6.jpg";
 import photo7 from "../../assets/galerie/photo7.jpg";
 import photo8 from "../../assets/galerie/photo8.jpg";
-import photo9 from "../../assets/galerie/photo9.jpg";
-import photo10 from "../../assets/galerie/photo10.jpg";
-import photo11 from "../../assets/galerie/photo11.jpg";
-import photo12 from "../../assets/galerie/photo12.jpg";
-import photo13 from "../../assets/galerie/photo13.jpg";
-import photo14 from "../../assets/galerie/photo14.jpg";
-import photo15 from "../../assets/galerie/photo15.jpg";
-import photo16 from "../../assets/galerie/photo16.jpg";
+
 
 const homeImages = [
   photo1,
@@ -29,14 +23,7 @@ const homeImages = [
   photo6,
   photo7,
   photo8,
-  photo9,
-  photo10,
-  photo11,
-  photo12,
-  photo13,
-  photo14,
-  photo15,
-  photo16,
+  
 ];
 
 function Menu() {

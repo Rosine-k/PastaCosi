@@ -1,5 +1,5 @@
 import React from 'react';
-import videoP from '../../video/video.mp4';
+import PrivatisationImg from '../../assets/privatisation1.jpg';
 
 export default function Privatisation() {
   return (
@@ -15,14 +15,7 @@ export default function Privatisation() {
       </div>
 
       <div className="privatisation-image">
-        <video 
-          src={videoP}
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          className="privatisation-video"
-        ></video>
+        <img className='privatisation-img' src={PrivatisationImg} alt="privatisation" />
       </div>
     </section>
   );

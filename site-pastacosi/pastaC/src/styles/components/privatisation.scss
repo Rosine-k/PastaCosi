@@ -1,55 +1,61 @@
+
 .privatisation-section {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
   width: 100%;
-  margin: 100px auto;
-  flex-wrap: wrap;
+  height: 530px; 
+  margin-top: 130px;
 }
 
-/* Bloc texte uniquement avec fond */
 .privatisation-text {
   flex: 1;
-  background-color:#381e11;
-  color: white;
-  padding: 60px 55px;
+  background-color: #2a4c1d; /* Couleur beige/taupe comme sur l'image */
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 320px;
 }
 
 .privatisation-h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 30px;
   color: white;
-  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
 }
 
 .privatisation-p {
-  font-size: 18px;
-  line-height: 1.6;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 40px;
 }
 
-/* Bloc image sans fond */
 .privatisation-image {
   flex: 1;
-  min-width: 320px;
-
-  .privatisation-video {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    display: block;
-  }
-
-  
 }
 
+.privatisation-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-
+/* Responsive */
+@media (max-width: 768px) {
+  .privatisation-section {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .privatisation-text {
+    padding: 40px 20px;
+  }
+  
+  .privatisation-image {
+    min-height: 300px;
+  }
+}
 
 
 @media (max-width: 1024px) {

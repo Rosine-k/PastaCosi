@@ -26,19 +26,15 @@
 
 .contact-info {
   flex: 1;
-  background-color:white;
-  color:  #d6910d;
+  background-color: #274919e3;
+  color:  black;
   padding: 35px 50px;
-  font-family: "Times New Roman", serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border:  #d6910d 1px solid;
+  
 
-  h2.contact-title {
-    font-size: 28px;
-    margin-bottom: 5px;
-  }
 
   p {
     font-size: 18px;
@@ -46,17 +42,37 @@
     margin-bottom: 5px;
   }
 
-  hr {
-    border: none;
-    border-top: 3px solid #d6910d;
-    margin: 14px 0;
-    width: 100%;
-  }
+  
 }
 .contact-text {
   display: flex;
   justify-content: space-between;
+  color: white;
 }
+
+.contact-container {
+  position: relative;
+}
+
+.contact-title {
+  position: relative;
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  
+}
+
+.contact-stroke {
+  position: absolute;
+  color: transparent;
+  -webkit-text-stroke: 6px #2d5016;
+}
+
+.contact-fill {
+  position: relative;
+  color: white;
+}
+
 @media (max-width: 1024px) {
   .contact {
     &-section {

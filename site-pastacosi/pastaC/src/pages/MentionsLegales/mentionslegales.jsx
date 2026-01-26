@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from "../../layout/Header/header";
 import Footer from "../../layout/Footer/footer";
 

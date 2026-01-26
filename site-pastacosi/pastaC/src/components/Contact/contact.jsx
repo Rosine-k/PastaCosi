@@ -4,53 +4,67 @@ export default function Contac() {
     <section className="contact-section">
       <div className="contact-section-inner">
    <div className="contact-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41951.05353171672!2d2.3738542564416893!3d48.916519268274556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d9a64ba2693%3A0x7cf6beb3d9d53a50!2s12%20Rue%20du%20Surmelin%2C%20Paris!5e0!3m2!1sfr!2sfr!4v1752690374824!5m2!1sfr!2sfr"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Carte du restaurant DIVINE"
-        ></iframe>
+        
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5246.731582524113!2d2.373044775963564!3d48.889365598526865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dd134434585%3A0x16b7d31e4d0bb848!2s78%20Av.%20de%20Flandre%2C%2075019%20Paris!5e0!3m2!1sfr!2sfr!4v1769297276398!5m2!1sfr!2sfr" 
+        width="100%" 
+        height="100%" 
+        style={{ border: 0 }}
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Carte du restaurant PASTA COSI"
+        >
+
+      </iframe>
+         
       </div>
 
       <div className="contact-info">
-        <h2 className="contact-title">DIVINE</h2>
-        <p>
-          Le restaurant se trouve dans le quartier de Pelleport dans le 20ème arrondissement.
-        </p>
-        <hr />
+        <div className='contact-container'>
+          <h2 className="contact-title">
+            <span className='contact-stroke'>PASTA COSI</span> 
+            <span className='contact-fill'>PASTA COSI</span> 
+          </h2>
+
+        </div>
+        
+        
+
+       
         <div className="contact-text">
           <p><strong>ADRESSE</strong></p>
-          <p>12 rue du Surmelin 75020 Paris</p>
+          <p>78 avenue de Flandre 75019 Paris</p>
+          
         </div>
         
-        <hr />
+        
         <div className="contact-text">
           <p> <strong>TÉLÉPHONE</strong><br /></p>
-        <p>07 73 24 88 81</p>
+          <p>07 62 20 90 33</p>
+          
         </div>
         
-        <hr />
-
+        
         <div className="contact-text">
 
           <p><strong>EMAIL</strong><br /></p>
-          <p>contact@divineparisrestaurant.fr</p>
+          <p>contact@pastacosi.fr</p>
+          
         </div>
         
-        <hr />
-
+        
         <div className="contact-text">
         <p><strong>HORAIRES</strong><br /></p>
-        <p>Lundi au Vendredi - 18h à 1h<br />
-          Samedi et dimanche - 12h à 1h</p>
+        <p>Lundi au Jeudi - 12h à 00h<br />
+          Vendredi et Samedi - 12h à 00h<br />
+          Dimanche - 12h à 00h
+          </p>
+          
 
         </div>
         
-        <hr />
+        
       </div>
       </div>
    
