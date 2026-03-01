@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import photo1 from "../../assets/galerie/photo1.jpg";
 import photo2 from "../../assets/galerie/photo2.jpg";
 import photo3 from "../../assets/galerie/photo3.jpg";
+import photo4 from "../../assets/galerie/photo4.jpg";
 import photo5 from "../../assets/galerie/photo5.jpg";
 import photo6 from "../../assets/galerie/photo6.jpg";
 import photo7 from "../../assets/galerie/photo7.jpg";
@@ -19,6 +20,7 @@ const homeImages = [
   photo1,
   photo2,
   photo3,
+  photo4,
   photo5,
   photo6,
   photo7,

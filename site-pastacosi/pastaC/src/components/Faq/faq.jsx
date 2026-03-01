@@ -6,50 +6,29 @@ import "swiper/css/navigation";
 // import FaqImg from "../../assets/faq3.jpg";
 
 const faqData = [
-  // {
-  //   question: "Est-ce que je peux apporter un gâteau d’anniversaire au restaurant ?",
-  //   answer: "Oui, il est possible d’apporter votre propre gâteau d’anniversaire. Une participation de 20 € vous sera demandée pour les frais de service (mise à disposition d’assiettes, couverts, rangement, etc.).",
-  // },
+ 
   {
-    question: "Est-ce que les retards sont acceptés ?",
-    answer: "Oui, les retards sont acceptés dans la limite de 15 minutes. Au-delà, votre table pourra être réattribuée.",
+    question: "Vos viandes sont-elles Halal ?",
+    answer: "Oui, toutes nos viandes sont Halal et notre certification est EL HOUDA HALAL.",
   },
   {
-    question: "Est-ce que tout le groupe doit être présent pour être installé ?",
-    answer: "Pour garantir une bonne organisation du service, nous ne pouvons pas vous faire entrer si tout le groupe n’est pas au complet.",
+    question: "Proposez-vous des options végétariennes ou adaptées à des régimes particuliers ?",
+    answer: "Oui, nous proposons plusieurs plats végétariens, et certaines recettes peuvent être adaptées selon vos besoins. N’hésitez pas à demander conseil à notre équipe sur place.",
   },
   {
-    question: "Est-ce qu’il y a de la musique dans le restaurant ?",
-    answer: "Oui, il y a de la musique d’ambiance pour accompagner votre repas.",
+    question: "Peut-on réserver une table en ligne ?",
+    answer: "Les réservations peuvent se faire directement via notre site internet ou par téléphone. Le week-end il est préférable de nous contacter avant votre venue pour être sûr d’avoir une table.",
   },
   {
-    question: "Jusqu’à quelle heure la cuisine est-elle ouverte ?",
-    answer: "La cuisine ferme à 00h20 la semaine de dimanche à jeudi  et 1h20 du matin le vendredi et samedi.",
+    question: "Est-il possible de manger sur place, à emporter ou en livraison ?",
+    answer: "Oui ! Chez Pasta Cosi Paris et Pasta Cosi Asnières, tu peux manger sur place, commander à emporter, ou passer par nos partenaires de livraison.",
   },
   {
-    question: "Comment puis-je réserver une table chez Pasta Cosi?",
-    answer: "Les réservations se font facilement via notre site internet. Pour toute demande de groupe (plus de 15 personnes), merci de nous contacter directement par téléphone.",
+    question: "Peut-on personnaliser son plat (changer une sauce, retirer un ingrédient, etc.) ?",
+    answer: "Oui, dans la mesure du possible, nous adaptons nos plats selon vos préférences. Dites-le simplement lors de votre commande.",
   },
-  {
-    question: "Est-il possible de privatiser ou de venir en groupe ?",
-    answer: "Oui, nous acceptons les réservations de groupe et la privatisation partielle sous certaines conditions : Vous pouvez privatiser pour un groupe jusqu’à 26 personnes maximum. Une terrasse fermée est disponible pour les groupes du lundi au jeudi. Le week-end, nous n’acceptons pas les groupes de plus de 12 personnes après 20h. Pour toute demande spécifique ou privatisation, merci de nous contacter par téléphone.",
-  },
-  {
-    question: "Quel est le nombre maximum de personnes autorisé le week-end ?",
-    answer: "Le week-end, nous accueillons les groupes dans les limites suivantes :  jusqu’à 15 personnes avant 20h - maximum 12 personnes après 20h.",
-  },
-  {
-    question: "Est-ce que la viande servie est halal ?",
-    answer: "Oui, toutes les viandes que nous servons sont 100 % halal.",
-  },
-  {
-    question: "Est-ce qu’il y a un DJ chez Divine ?",
-    answer: "Non, il n’y a pas de DJ chez Divine. Nous diffusons une musique d’ambiance soigneusement sélectionnée pour accompagner votre repas dans une atmosphère chaleureuse et conviviale.",
-  },
-  // {
-  //   question: "Proposez-vous des formules ou menus ?",
-  //   answer: "Oui, nous proposons deux formules au choix : – Entrée + Plat + Boisson – Plat + Dessert + Boisson. Ces formules sont proposées à 35 € ou 45 €, selon le menu sélectionné. Le détail des plats inclus est à retrouver dans notre carte, rubrique Menu.",
-  // },
+  
+ 
 ];
 
 export default function FaqCarousel() {

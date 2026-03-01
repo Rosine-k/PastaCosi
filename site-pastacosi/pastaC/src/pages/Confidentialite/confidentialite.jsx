@@ -14,8 +14,8 @@ export default function Confidentialite() {
             <section>
               <h2>1. Identité du responsable du traitement</h2>
               <p>
-                Le site <strong>divine.fr</strong> est édité par le restaurant
-                DIVINE, situé au 12 rue du Surmelin, 75020 Paris.
+                Le site <strong>pastacosi.fr</strong> est édité par le restaurant
+                PASTA COSI, situé au 78 avenue de Flandre, 75019 Paris.
               </p>
             </section>
 
@@ -83,7 +83,7 @@ export default function Confidentialite() {
               </ul>
               <p>
                 Pour exercer vos droits, contactez :{" "}
-                <a href="mailto:contact@divine.fr">contact@divine.fr</a>
+                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
               </p>
             </section>
 
@@ -99,7 +99,7 @@ export default function Confidentialite() {
               <h2>9. Contact</h2>
               <p>
                 Pour toute question concernant cette politique :{" "}
-                <a href="mailto:contact@divine.fr">contact@divine.fr</a>
+                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
               </p>
             </section>
           </div>

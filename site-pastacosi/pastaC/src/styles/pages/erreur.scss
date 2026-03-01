@@ -14,7 +14,7 @@
   h1 {
     font-size: 100px;
     margin-bottom: 20px;
-    color: #381e11;
+    color: #274919e3;
     margin-top: 0;
   }
 
@@ -27,7 +27,7 @@
 
   .notfound-home-link {
     display: inline-block;
-    background-color: #381e11;
+    background-color: #274919e3;
     color: #fff;
     padding: 12px 24px;
     text-decoration: none;
@@ -36,8 +36,8 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #d6910d;
-      color: #000;
+      background-color: #3e7727e3;
+      // color: #000;
     }
   }
 }

@@ -30,7 +30,7 @@ export default function Contac() {
         </div>
         
         
-
+        <hr />
        
         <div className="contact-text">
           <p><strong>ADRESSE</strong></p>
@@ -38,6 +38,7 @@ export default function Contac() {
           
         </div>
         
+        <hr />
         
         <div className="contact-text">
           <p> <strong>TÉLÉPHONE</strong><br /></p>
@@ -45,6 +46,7 @@ export default function Contac() {
           
         </div>
         
+        <hr />
         
         <div className="contact-text">
 
@@ -53,6 +55,7 @@ export default function Contac() {
           
         </div>
         
+        <hr />
         
         <div className="contact-text">
         <p><strong>HORAIRES</strong><br /></p>

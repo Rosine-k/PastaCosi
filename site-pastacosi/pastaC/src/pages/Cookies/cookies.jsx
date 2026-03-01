@@ -24,7 +24,7 @@ export default function Cookies() {
             <section>
               <h2>2. Quels cookies utilisons-nous ?</h2>
               <p>
-                Le site <strong>divine.fr</strong> utilise les types de cookies
+                Le site <strong>pastacosi.fr</strong> utilise les types de cookies
                 suivants :
               </p>
               <ul>
@@ -101,7 +101,7 @@ export default function Cookies() {
               <p>
                 Pour toute question sur cette politique ou pour exercer vos
                 droits, vous pouvez nous contacter à :{" "}
-                <a href="mailto:contact@divine.fr">contact@divine.fr</a>
+                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
               </p>
             </section>
           </div>

@@ -12,22 +12,37 @@ export default function MentionsLegales() {
             <h1>Mentions Légales</h1>
 
             <section>
-              <h2>Identification de l’éditeur</h2>
+              <h2>Identification des éditeurs</h2>
               <p>
-                <strong>DIVINE</strong> – SAS au capital de 1 000 €<br />
+                <strong>LA SECONDE COMPANY</strong> – SAS au capital de 1 000 €<br />
                 Activité : Restauration traditionnelle
                 <br />
-                Adresse : 12 rue du Surmelin, 75020 Paris, France
+                Adresse : 78 avenue de Flandre, 75019 Paris, France
                 <br />
-                Tél. : 07 53 97 59 03
+                Tél. : 07 62 20 90 33
                 <br />
-                Email : <a href="mailto:contact@divineparisrestaurant.fr">contact@divineparisrestaurant.fr</a>
+                Email : <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
                 <br />
-                SIRET : 887 872 265 00012
+                SIRET : 929 406 031 00013
                 <br />
-                TVA intracommunautaire : FR08887872265
+                TVA intracommunautaire : FR53 929 406 031
+               
+              </p>
+
+              <p>
+                <strong>LA TROISIEME COMPANY</strong> – SAS au capital de 1 000 €<br />
+                Activité : Restauration traditionnelle
                 <br />
-                RCS Paris B 887 872 265
+                Adresse : 101 quai du Docteur Dervaux, 92600 Asnières-sur-Seine, France
+                <br />
+                Tél. : 07 62 20 90 33
+                <br />
+                Email : <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
+                <br />
+                SIRET : 995 044 609 00015
+                <br />
+                TVA intracommunautaire : FR64 995 044 609
+               
               </p>
             </section>
 
@@ -53,7 +68,7 @@ export default function MentionsLegales() {
               <h2>Propriété intellectuelle</h2>
               <p>
                 Le contenu du site (textes, visuels, logo, etc.) est la
-                propriété exclusive de DIVINE, sauf mention contraire. Toute
+                propriété exclusive de LA SECONDE COMPANY et LA TROISIEME COMPANY, sauf mention contraire. Toute
                 reproduction ou représentation, intégrale ou partielle, sans
                 autorisation préalable, est interdite.
               </p>
@@ -63,7 +78,7 @@ export default function MentionsLegales() {
               <h2>Responsabilité</h2>
               <p>
                 Les informations présentées sur ce site sont fournies à titre
-                indicatif. DIVINE s'efforce de les maintenir à jour, mais ne
+                indicatif. LA SECONDE COMPANY et LA TROISIEME COMPANY s'efforce de les maintenir à jour, mais ne
                 saurait être tenue responsable des erreurs, omissions ou de
                 l’utilisation faite de ces informations.
               </p>
@@ -77,7 +92,7 @@ export default function MentionsLegales() {
                 Conformément au RGPD, vous disposez d’un droit d’accès, de
                 rectification et de suppression de vos données. Pour toute
                 demande :{" "}
-                <a href="mailto:contact@divineparisrestaurant.fr">contact@divineparisrestaurant.fr</a>.<br />
+                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>.<br />
                 Le site peut également utiliser des cookies à des fins de
                 navigation ou de mesure d’audience. Vous pouvez configurer vos
                 préférences via le bandeau d'information lors de votre visite.
@@ -102,7 +117,7 @@ export default function MentionsLegales() {
               <h2>Contact</h2>
               <p>
                 Pour toute question relative au site, veuillez nous contacter à
-                : <a href="mailto:contact@divineparisrestaurant.fr">contact@divineparisrestaurant.fr</a>
+                : <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
               </p>
             </section>
           </div>
