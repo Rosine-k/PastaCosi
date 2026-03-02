@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Header from "../../layout/Header/header";
 import Banner from "../../components/Banner/banner";
-import bannerResa from "../../assets/navig2.jpg";
+import bannerResa from "../../assets/resaHome.jpg";
 import Galerie from "../../components/Galerie/galerie";
 import Footer from "../../layout/Footer/footer";
 
@@ -54,7 +54,7 @@ function Reservation() {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/reservation", {
+    const response = await fetch("/reservation.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,11 +80,11 @@ function Reservation() {
     } else {
       alert(data.message || "Erreur lors de l'envoi.");
     }
+
   } catch (error) {
     alert("Erreur serveur.");
     console.error(error);
   }
-
 };
 
   return (
@@ -182,7 +182,7 @@ function Reservation() {
         Pasta Cosi - Paris 19ème
       </option>
       <option value="Pasta Cosi - Asnières">
-        Pasta Cosi - Asnières
+        Pasta Cosi - Asnières-sur-Seine
       </option>
     </select>
   </div>

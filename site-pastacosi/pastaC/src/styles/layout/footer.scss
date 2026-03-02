@@ -6,6 +6,10 @@ html, body {
   
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   color-scheme: only light;
   background: white;
@@ -26,7 +30,7 @@ footer {
   font-family: 'Montserrat', sans-serif;
   color: #2d5016;
   padding: 20px 0;
-  margin-top: 80px;
+  // margin-top: 80px;
   bottom: 0;
   left: 0;
   display: flex;
@@ -40,6 +44,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  gap: 30px;
 }
 
 .footer-links {
@@ -64,33 +69,11 @@ footer {
 .footer-concepteur {
   font-style: italic;
   font-size: 12px;
-  text-align: right;
+
 }
 
-.footer-social {
-  display: flex;
-  gap: 26px;
-  // align-items: center;
-  margin-right: 20px;
-  margin-left: 40px;
-}
 
-.footer-social a {
-  // color: #2d5016;
-  font-size: 30px;
-  transition: opacity 0.3s, transform 0.2s;
-  display: flex;
-  // align-items: center;
-}
 
-.footer-social a:hover {
-  opacity: 0.7;
-  transform: scale(1.1);
-}
-
-.icon-link {
-  width: 40px;
-}
 
 
 /* ============================= */

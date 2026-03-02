@@ -19,6 +19,11 @@
   
 }
 
+.banner--home .banner__img {
+  height: 100vh;
+  min-height: 600px;
+}
+
 .banner-title {
   position: absolute;
   top: 50%;
@@ -98,10 +103,10 @@
     line-height: 1.2;
   }
     /* Bannière uniquement sur la page d'accueil */
-  .banner--home .banner__img {
-    height: 100vh;     
-    min-height: 600px; 
-  }
+  // .banner--home .banner__img {
+  //   height: 100vh;     
+  //   min-height: 600px; 
+  // }
 }
 // @media (max-width: 440px) {
 //   main {

@@ -5,18 +5,18 @@
   margin: 60px auto;
   flex-wrap: wrap;
   max-width: 1380px;
-  margin-bottom: 130px;
+  margin-bottom: 140px;
   
 }
 
 .nav-card {
   position: relative;
   width: 100%;
-  max-width: 570px;
-  height: 500px;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 300px;
+  border-radius: 50%;
 }
 
 .nav-img {
@@ -88,6 +88,9 @@
     &-text {
       font-size: 26px;
     }
+  }
+  .nav-section {
+    margin-bottom: 50px;
   }
 }
 

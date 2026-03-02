@@ -7,7 +7,8 @@ import Privatisation from "../../components/Privatisation/privatisation";
 import Galerie from "../../components/Galerie/galerie";
 import FaqCarousel from "../../components/Faq/faq";
 import Contact from "../../components/Contact/contact";
-import Recrutement from "../../components/Recrutement/recrutement ";
+import Txtlogo from "../../assets/txtLogo.png";
+// import Recrutement from "../../components/Recrutement/recrutement ";
 import Footer from "../../layout/Footer/footer";
 import photo1 from "../../assets/galerie/photo1.jpg";
 import photo2 from "../../assets/galerie/photo2.jpg";
@@ -45,9 +46,10 @@ function Accueil() {
         </Banner>
 
         <div className="textHome">
+          <img className='textLogo' src={Txtlogo} alt="Pasta Cosi" />
           
-          <p className="textTitle">Bienvenue chez Pasta Cosi<br />            
-            Le goût de l’Italie au cœur de Paris 19e ! <br /> <br /></p>
+          <p className="textTitle">Bienvenue chez Pasta Cosi ! <br /> 
+           Le goût de l'Italie à Paris 19ème et Asnières-sur-Seine</p><br />
           <p className="textDescription">
             Envie d’un voyage gourmand ? Chez Pasta Cosi, chaque assiette est une explosion de saveurs
             mêlant la tradition italienne et des inspirations du monde. Pâtes fraîches, recettes
@@ -57,15 +59,18 @@ function Accueil() {
             Ambiance chaleureuse, décor moderne, que ce soit en famille, entre amis ou pour une soirée
             romantique, votre table vous attend.
             <br />
+            
           </p>
         </div>
 
         <NavigationCards />
-        <Galerie images={homeImages} />
+        
         <Privatisation />
         
 
         <FaqCarousel />
+
+        <Galerie images={homeImages} />
         <Contact />
         {/* <Recrutement /> */}
       </main>
