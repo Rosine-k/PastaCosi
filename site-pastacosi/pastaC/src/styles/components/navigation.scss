@@ -17,6 +17,7 @@
   overflow: hidden;
   cursor: pointer;
   border-radius: 50%;
+  border: 2px solid #2a4c1d;
 }
 
 .nav-img {
@@ -24,11 +25,14 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  filter: brightness(0.72);
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.nav-card:hover .nav-img {
+.nav-card:hover .nav-img,
+.nav-card:active .nav-img {
   transform: scale(1.05);
+  filter: brightness(1);
 }
 
 .nav-overlay {
@@ -40,17 +44,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 
 .nav-text {
-  font-size: 28px;
-  color: white;
-  padding: 16px 32px;
-  border: 1px solid white;
+  font-family: 'Oswald', sans-serif;
+  font-style: italic;
+  font-size: 48px;
+  font-weight: 600;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  background: rgba(0, 0, 0, 0.3);
+  letter-spacing: 3px;
+  color: #fdf8e8;
+  -webkit-text-stroke: 2px #2a4c1d;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+  transition: opacity 0.4s ease;
 }
+
+.nav-card:hover .nav-text,
+.nav-card:active .nav-text {
+  opacity: 0.5;
+}
+
+.nav-card:hover .nav-text,
+.nav-card:active .nav-text {
+  opacity: 0.6;
+}
+
 @media (max-width: 1340px) {
   .nav {
     &-section {

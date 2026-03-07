@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="/politique-cookies">Politique de cookies</a>
           
         </div>
-        <div className="footer-concepteur"><p >conçu par Nouvel écran</p></div>
+        <div ><p className="footer-concepteur">conçu par Nouvel écran</p></div>
         
       </div>
     </footer>

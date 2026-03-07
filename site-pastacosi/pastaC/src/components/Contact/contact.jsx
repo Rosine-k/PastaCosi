@@ -8,7 +8,7 @@ const restaurants = [
     city: "Paris",
     address: "78 avenue de Flandre 75019 Paris",
     phone: "+33 07 62 20 90 33",
-    email: "contact@pastacosi.fr",
+    email: "contact@pasta-cosi.com",
     hours: [
       { days: "Lundi – Jeudi", time: "12h – 00h" },
       { days: "Vendredi – Samedi", time: "12h – 01h" },
@@ -21,7 +21,7 @@ const restaurants = [
     city: "Asnières-sur-Seine",
     address: "101 Quai du Dr Dervaux, 92600 Asnières-sur-Seine",
     phone: "+33 7 62 20 90 33",
-    email: "contact@pastacosi.fr",
+    email: "contact@pasta-cosi.com",
     hours: [
       { days: "Lundi – Jeudi", time: "12h – 00h" },
       { days: "Vendredi – Samedi", time: "12h – 01h" },

@@ -39,7 +39,7 @@ $restaurant = htmlspecialchars($data["restaurant"]);
 $remarques = htmlspecialchars($data["remarques"] ?? "");
 
 // Destinataire
-$to = "kabore.rosine75@gmail.com";
+$to = "contact@pasta-cosi.com";
 $subject = "Nouvelle réservation";
 
 // Message HTML
@@ -58,7 +58,7 @@ $message = "
 // Headers
 $headers  = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: kabore.rosine75@gmail.com";
+$headers .= "From: contact@pasta-cosi.com";
 
 // Envoi
 if (mail($to, $subject, $message, $headers)) {

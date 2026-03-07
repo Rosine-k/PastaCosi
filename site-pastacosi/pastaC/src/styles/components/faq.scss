@@ -1,298 +1,503 @@
-// Ajoute dans ton index.html :
-// <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+$green-dark:  #2A4D14;
+$green-mid:   #3D6B1E;
+$green-light: #5A8F32;
+$beige-card:  #FAF7F0;
+$beige-dark:  #D4C5A0;
 
-$green-dark:   #2A4D14;
-$green-mid:    #3D6B1E;
-$green-light:  #5A8F32;
-$beige-mid:    #f0e4c4;
-$beige-dark:   #f9e7bc;
-$beige-card:   #fdf8e8;
-$text-body:    #4E5E3A;
-
-.faq-carousel-section {
-  max-width: 760px;
-  margin: 100px auto;
-  padding: 0 20px;
+// ── Section fond vert pleine largeur ─────────────────────
+.faq-section {
   width: 100%;
+  background: $green-dark;
+  padding: 80px 32px;
   box-sizing: border-box;
-  background: #fff;
-  text-align: center;
+  
+}
 
-  // ── Eyebrow ──────────────────────────────
-  .faq-eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: $green-light;
-    margin-bottom: 14px;
+// ── Header ───────────────────────────────────────────────
+.faq-header {
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.faq-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $green-light;
+  margin-bottom: 14px;
+}
+
+.faq-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 500;
+  color: $beige-card;
+  line-height: 1.2;
+
+  em {
+    font-style: italic;
+    color: $beige-dark;
+  }
+}
+
+// ── Liste accordéon ───────────────────────────────────────
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+// ── Item ─────────────────────────────────────────────────
+.faq-item {
+  border-bottom: 1px solid rgba($beige-card, 0.12);
+  cursor: pointer;
+  transition: background 0.25s ease;
+
+  &:first-child {
+    border-top: 1px solid rgba($beige-card, 0.12);
   }
 
-  // ── Title ────────────────────────────────
-  .faq-title {
-   
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 500;
-    color: $green-dark;
-    line-height: 1.2;
-    margin-bottom: 52px;
-    
-
-    em {
-      font-style: italic;
-      color: $green-mid;
+  &:hover {
+    .faq-item__question {
+      color: $beige-card;
     }
   }
 
-  // ── Slider wrapper ───────────────────────
-  .faq-slider-wrapper {
+  // ── Question ───────────────────────────────────────────
+  &__question {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
-  }
-
-  // ── Navigation buttons ───────────────────
-  .faq-nav-btn {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid $beige-dark;
-    background: $beige-card;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 12px rgba($green-dark, 0.06);
-    transition: background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-
-    // Reset des styles Swiper qui positionnent les boutons en absolute
-    position: static !important;
-    top: unset !important;
-    transform: none !important;
-    margin-top: 0 !important;
-
-    &::after {
-      font-size: 15px !important;
-      color: $green-mid;
-      transition: color 0.28s ease;
-    }
-
-    &:hover {
-      background: $green-dark;
-      border-color: $green-dark;
-      box-shadow: 0 8px 28px rgba($green-dark, 0.22);
-
-      &::after {
-        color: #fff;
-      }
-    }
-
-    &.swiper-button-disabled {
-      opacity: 0.35;
-      pointer-events: none;
-    }
-  }
-
-  // ── Swiper ───────────────────────────────
-  .faq-swiper {
-    flex: 1;
-    min-width: 0; // KEY FIX : évite le débordement en flexbox
-
-    .swiper-slide {
-      height: auto;
-    }
-  }
-
-  // ── Card ─────────────────────────────────
-  .faq-card {
-    position: relative;
-    background: $beige-card;
-    border: 1px solid $beige-dark;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow:
-      inset 0 1px 0 rgba(#fff, 0.8),
-      0 4px 32px rgba($green-dark, 0.05),
-      0 1px 4px rgba($green-dark, 0.04);
-
-    // Halo décoratif en z-index 0 — ne doit PAS écraser le contenu
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      // background:
-      //   radial-gradient(ellipse at 20% 85%, rgba($green-light, 0.06) 0%, transparent 55%),
-      //   radial-gradient(ellipse at 80% 15%, rgba($beige-dark, 0.35) 0%, transparent 55%);
-      pointer-events: none;
-    }
-
-    // Contenu au-dessus du ::before
-    &__content {
-      position: relative;
-      z-index: 1;
-      padding: 52px 60px;
-    }
-  }
-
-  // ── Ornament SVG ─────────────────────────
-  .faq-ornament {
-    position: absolute;
-    top: 22px;
-    right: 26px;
-    width: 48px;
-    height: 48px;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  // ── Slide tag (pill) ─────────────────────
-  .faq-slide-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: $beige-mid;
-    border: 1px solid $beige-dark;
-    border-radius: 100px;
-    padding: 5px 14px;
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: $green-mid;
-    margin-bottom: 26px;
-
-    &__dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: $green-light;
-      flex-shrink: 0;
-    }
-  }
-
-  // ── Question ─────────────────────────────
-  .faq-question {
-
-    font-size: clamp(19px, 2.5vw, 24px);
+    padding: 24px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(17px, 2vw, 21px);
     font-weight: 600;
-    color: $green-dark;
-    line-height: 1.3;
-    margin-bottom: 22px;
-    padding: 8px;
+    color: rgba($beige-card, 0.7);
+    line-height: 1.35;
+    transition: color 0.25s ease;
+    user-select: none;
   }
 
-  // ── Divider ──────────────────────────────
-  .faq-divider {
+  // ── Icône +/- ──────────────────────────────────────────
+  &__icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba($beige-card, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 22px;
-
-    &::before,
-    &::after {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: $beige-dark;
-    }
-
-    &__dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: $green-light;
-      opacity: 0.6;
-    }
+    font-size: 20px;
+    font-weight: 300;
+    color: $green-light;
+    transition: all 0.25s ease;
+    font-family: 'Jost', sans-serif;
+    line-height: 1;
   }
 
-  // ── Answer ───────────────────────────────
-  .faq-answer {
+  // ── Réponse — fermée par défaut ────────────────────────
+  &__answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+    overflow: hidden;
+  }
+
+  &__answer-inner {
+    overflow: hidden;
+    font-family: 'Jost', sans-serif;
     font-size: 15px;
     font-weight: 300;
-    color: $text-body;
-    line-height: 1.8;
-    padding: 8px;
-
-    strong {
-      font-weight: 500;
-      color: $green-dark;
-    }
+    color: rgba($beige-card, 0.65);
+    line-height: 1.85;
   }
 
-  // ── Pagination dots ──────────────────────
-  .faq-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-    margin-top: 28px;
+  // ── État ouvert ────────────────────────────────────────
+  &--open {
+    .faq-item__question {
+      color: $beige-card;
+    }
 
-    .faq-dot {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: $beige-dark;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      opacity: 1;
+    .faq-item__icon {
+      background: rgba($beige-card, 0.08);
+      border-color: rgba($beige-card, 0.3);
+      color: $beige-card;
+    }
 
-      &--active {
-        width: 20px;
-        border-radius: 3px;
-        background: $green-dark;
-      }
+    .faq-item__answer {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-item__answer-inner {
+      padding-bottom: 24px;
+      color: rgba($beige-card, 0.75);
     }
   }
 }
 
-// ── Responsive ─────────────────────────────
+// ── Responsive ────────────────────────────────────────────
 
-@media (max-width: 840px) {
-  .faq-carousel-section {
-    margin: 80px auto;
+@media (max-width: 1024px) {
+  .faq-section {
+    padding: 72px 40px;
+  }
+}
 
-    .faq-card__content {
-      padding: 40px 36px;
-    }
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 64px 28px;
+  }
+
+  .faq-header {
+    margin-bottom: 40px;
+  }
+
+  .faq-item__question {
+    padding: 20px 0;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 540px) {
-  .faq-carousel-section {
-    padding: 130px 12px 50px;
-    margin: 0 auto;
-    background: #fff;
-    
+  .faq-section {
+    padding: 52px 20px;
+  }
 
-    .faq-slider-wrapper {
-      gap: 10px;
-    }
+  .faq-eyebrow {
+    font-size: 9.5px;
+  }
 
-    .faq-nav-btn {
-      width: 38px;
-      height: 38px;
+  .faq-header {
+    margin-bottom: 32px;
+  }
 
-      &::after {
-        font-size: 12px !important;
-      }
-    }
+  .faq-item__question {
+    padding: 18px 0;
+    font-size: 16px;
+    gap: 14px;
+  }
 
-    .faq-card {
-      border-radius: 16px;
+  .faq-item__icon {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
 
-      &__content {
-        padding: 32px 22px;
-      }
-    }
-
-    .faq-ornament {
-      width: 34px;
-      height: 34px;
-    }
+  .faq-item__answer-inner {
+    font-size: 14px;
   }
 }
+
+@media (max-width: 360px) {
+  .faq-section {
+    padding: 44px 16px;
+  }
+
+  .faq-item__question {
+    font-size: 15px;
+  }
+}
+
+
+// // Ajoute dans ton index.html :
+// // <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+// $green-dark:   #2A4D14;
+// $green-mid:    #3D6B1E;
+// $green-light:  #5A8F32;
+// $beige-mid:    #f0e4c4;
+// $beige-dark:   #f9e7bc;
+// $beige-card:   #fdf8e8;
+// $text-body:    #4E5E3A;
+
+// .faq-carousel-section {
+//   max-width: 760px;
+//   margin: 100px auto;
+//   padding: 0 20px;
+//   width: 100%;
+//   box-sizing: border-box;
+//   background: #fff;
+//   text-align: center;
+
+//   // ── Eyebrow ──────────────────────────────
+//   .faq-eyebrow {
+//     font-size: 11px;
+//     font-weight: 500;
+//     letter-spacing: 0.3em;
+//     text-transform: uppercase;
+//     color: $green-light;
+//     margin-bottom: 14px;
+//   }
+
+//   // ── Title ────────────────────────────────
+//   .faq-title {
+   
+//     font-size: clamp(28px, 4vw, 42px);
+//     font-weight: 500;
+//     color: $green-dark;
+//     line-height: 1.2;
+//     margin-bottom: 52px;
+    
+
+//     em {
+//       font-style: italic;
+//       color: $green-mid;
+//     }
+//   }
+
+//   // ── Slider wrapper ───────────────────────
+//   .faq-slider-wrapper {
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//   }
+
+//   // ── Navigation buttons ───────────────────
+//   .faq-nav-btn {
+//     flex-shrink: 0;
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 50%;
+//     border: 1px solid $beige-dark;
+//     background: $beige-card;
+//     cursor: pointer;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     box-shadow: 0 2px 12px rgba($green-dark, 0.06);
+//     transition: background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+
+//     // Reset des styles Swiper qui positionnent les boutons en absolute
+//     position: static !important;
+//     top: unset !important;
+//     transform: none !important;
+//     margin-top: 0 !important;
+
+//     &::after {
+//       font-size: 15px !important;
+//       color: $green-mid;
+//       transition: color 0.28s ease;
+//     }
+
+//     &:hover {
+//       background: $green-dark;
+//       border-color: $green-dark;
+//       box-shadow: 0 8px 28px rgba($green-dark, 0.22);
+
+//       &::after {
+//         color: #fff;
+//       }
+//     }
+
+//     &.swiper-button-disabled {
+//       opacity: 0.35;
+//       pointer-events: none;
+//     }
+//   }
+
+//   // ── Swiper ───────────────────────────────
+//   .faq-swiper {
+//     flex: 1;
+//     min-width: 0; // KEY FIX : évite le débordement en flexbox
+
+//     .swiper-slide {
+//       height: auto;
+//     }
+//   }
+
+//   // ── Card ─────────────────────────────────
+//   .faq-card {
+//     position: relative;
+//     background: $beige-card;
+//     border: 1px solid $beige-dark;
+//     border-radius: 24px;
+//     overflow: hidden;
+//     box-shadow:
+//       inset 0 1px 0 rgba(#fff, 0.8),
+//       0 4px 32px rgba($green-dark, 0.05),
+//       0 1px 4px rgba($green-dark, 0.04);
+
+//     // Halo décoratif en z-index 0 — ne doit PAS écraser le contenu
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       inset: 0;
+//       z-index: 0;
+//       // background:
+//       //   radial-gradient(ellipse at 20% 85%, rgba($green-light, 0.06) 0%, transparent 55%),
+//       //   radial-gradient(ellipse at 80% 15%, rgba($beige-dark, 0.35) 0%, transparent 55%);
+//       pointer-events: none;
+//     }
+
+//     // Contenu au-dessus du ::before
+//     &__content {
+//       position: relative;
+//       z-index: 1;
+//       padding: 52px 60px;
+//     }
+//   }
+
+//   // ── Ornament SVG ─────────────────────────
+//   .faq-ornament {
+//     position: absolute;
+//     top: 22px;
+//     right: 26px;
+//     width: 48px;
+//     height: 48px;
+//     opacity: 0.1;
+//     pointer-events: none;
+//     z-index: 2;
+//   }
+
+//   // ── Slide tag (pill) ─────────────────────
+//   .faq-slide-tag {
+//     display: inline-flex;
+//     align-items: center;
+//     gap: 8px;
+//     background: $beige-mid;
+//     border: 1px solid $beige-dark;
+//     border-radius: 100px;
+//     padding: 5px 14px;
+//     font-size: 10.5px;
+//     font-weight: 500;
+//     letter-spacing: 0.18em;
+//     text-transform: uppercase;
+//     color: $green-mid;
+//     margin-bottom: 26px;
+
+//     &__dot {
+//       width: 5px;
+//       height: 5px;
+//       border-radius: 50%;
+//       background: $green-light;
+//       flex-shrink: 0;
+//     }
+//   }
+
+//   // ── Question ─────────────────────────────
+//   .faq-question {
+
+//     font-size: clamp(19px, 2.5vw, 24px);
+//     font-weight: 600;
+//     color: $green-dark;
+//     line-height: 1.3;
+//     margin-bottom: 22px;
+//     padding: 8px;
+//   }
+
+//   // ── Divider ──────────────────────────────
+//   .faq-divider {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 12px;
+//     margin-bottom: 22px;
+
+//     &::before,
+//     &::after {
+//       content: '';
+//       width: 28px;
+//       height: 1px;
+//       background: $beige-dark;
+//     }
+
+//     &__dot {
+//       width: 5px;
+//       height: 5px;
+//       border-radius: 50%;
+//       background: $green-light;
+//       opacity: 0.6;
+//     }
+//   }
+
+//   // ── Answer ───────────────────────────────
+//   .faq-answer {
+//     font-size: 15px;
+//     font-weight: 300;
+//     color: $text-body;
+//     line-height: 1.8;
+//     padding: 8px;
+
+//     strong {
+//       font-weight: 500;
+//       color: $green-dark;
+//     }
+//   }
+
+//   // ── Pagination dots ──────────────────────
+//   .faq-dots {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 7px;
+//     margin-top: 28px;
+
+//     .faq-dot {
+//       display: inline-block;
+//       width: 5px;
+//       height: 5px;
+//       border-radius: 50%;
+//       background: $beige-dark;
+//       cursor: pointer;
+//       transition: all 0.3s ease;
+//       opacity: 1;
+
+//       &--active {
+//         width: 20px;
+//         border-radius: 3px;
+//         background: $green-dark;
+//       }
+//     }
+//   }
+// }
+
+// // ── Responsive ─────────────────────────────
+
+// @media (max-width: 840px) {
+//   .faq-carousel-section {
+//     margin: 80px auto;
+
+//     .faq-card__content {
+//       padding: 40px 36px;
+//     }
+//   }
+// }
+
+// @media (max-width: 540px) {
+//   .faq-carousel-section {
+//     padding: 130px 12px 50px;
+//     margin: 0 auto;
+//     background: #fff;
+    
+
+//     .faq-slider-wrapper {
+//       gap: 10px;
+//     }
+
+//     .faq-nav-btn {
+//       width: 38px;
+//       height: 38px;
+
+//       &::after {
+//         font-size: 12px !important;
+//       }
+//     }
+
+//     .faq-card {
+//       border-radius: 16px;
+
+//       &__content {
+//         padding: 32px 22px;
+//       }
+//     }
+
+//     .faq-ornament {
+//       width: 34px;
+//       height: 34px;
+//     }
+//   }
+// }

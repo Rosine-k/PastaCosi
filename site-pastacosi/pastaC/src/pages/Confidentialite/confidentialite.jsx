@@ -14,8 +14,8 @@ export default function Confidentialite() {
             <section>
               <h2>1. Identité du responsable du traitement</h2>
               <p>
-                Le site <strong>pastacosi.fr</strong> est édité par le restaurant
-                PASTA COSI, situé au 78 avenue de Flandre, 75019 Paris.
+                Le site <strong>pasta-cosi.com</strong> est édité par LA SECONDE COMPANY, situé au 78 avenue 
+                de Flandre 75019 Paris et LA TROISIEME COMPANY, situé au 101 quai du Docteur Dervaux, 92600 Asnières-sur-Seine.
               </p>
             </section>
 
@@ -47,7 +47,7 @@ export default function Confidentialite() {
               <h2>4. Base légale</h2>
               <p>
                 Le traitement est basé sur l'exécution d’un contrat
-                (réservation) et l’intérêt légitime de DIVINE à assurer sa
+                (réservation) et l’intérêt légitime de PASTA COSI à assurer sa
                 relation client.
               </p>
             </section>
@@ -83,7 +83,7 @@ export default function Confidentialite() {
               </ul>
               <p>
                 Pour exercer vos droits, contactez :{" "}
-                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
+                <a href="mailto:contact@pasta-cosi.com">contact@pasta-cosi.com</a>
               </p>
             </section>
 
@@ -99,7 +99,7 @@ export default function Confidentialite() {
               <h2>9. Contact</h2>
               <p>
                 Pour toute question concernant cette politique :{" "}
-                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
+                <a href="mailto:contact@pasta-cosi.com">contact@pasta-cosi.com</a>
               </p>
             </section>
           </div>

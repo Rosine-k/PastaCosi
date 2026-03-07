@@ -37,7 +37,7 @@ export default function MentionsLegales() {
                 <br />
                 Tél. : 07 62 20 90 33
                 <br />
-                Email : <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
+                Email : <a href="mailto:contact@pasta-cosi.com">contact@pasta-cosi.com</a>
                 <br />
                 SIRET : 995 044 609 00015
                 <br />
@@ -92,7 +92,7 @@ export default function MentionsLegales() {
                 Conformément au RGPD, vous disposez d’un droit d’accès, de
                 rectification et de suppression de vos données. Pour toute
                 demande :{" "}
-                <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>.<br />
+                <a href="mailto:contact@pasta-cosi.com">contact@pasta-cosi.com</a>.<br />
                 Le site peut également utiliser des cookies à des fins de
                 navigation ou de mesure d’audience. Vous pouvez configurer vos
                 préférences via le bandeau d'information lors de votre visite.
@@ -117,7 +117,7 @@ export default function MentionsLegales() {
               <h2>Contact</h2>
               <p>
                 Pour toute question relative au site, veuillez nous contacter à
-                : <a href="mailto:contact@pastacosi.fr">contact@pastacosi.fr</a>
+                : <a href="mailto:contact@pasta-cosi.com">contact@pasta-cosi.com</a>
               </p>
             </section>
           </div>

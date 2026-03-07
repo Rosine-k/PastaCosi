@@ -1,83 +1,378 @@
+$green-dark:  #2A4D14;
+$green-mid:   #3D6B1E;
+$green-light: #5A8F32;
+$beige-card:  #FAF7F0;
+$beige-dark:  #D4C5A0;
 
+// ── Section ──────────────────────────────────────────────
 .privatisation-section {
   display: flex;
   width: 100%;
-  height: 530px; 
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
   margin-top: 130px;
 }
 
-.privatisation-text {
-  flex: 1;
-  background-color: #2a4c1d; /* Couleur beige/taupe comme sur l'image */
-  padding: 80px 60px;
+// ── Image fond ───────────────────────────────────────────
+.privatisation-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.45);
+  }
+
+  // Dégradé gauche → droite pour concentrer la lecture à gauche
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(15, 30, 6, 0.78) 0%,
+      rgba(15, 30, 6, 0.48) 50%,
+      rgba(15, 30, 6, 0.15) 100%
+    );
+  }
+}
+
+// ── Contenu ───────────────────────────────────────────────
+.privatisation-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 80px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.privatisation-h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+// ── Eyebrow ───────────────────────────────────────────────
+.privatisation-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  color: white;
-  letter-spacing: 2px;
+  color: $green-light;
+  margin-bottom: 18px;
 }
 
+// ── Titre ─────────────────────────────────────────────────
+.privatisation-h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 500;
+  color: $beige-card;
+  line-height: 1.1;
+  margin-bottom: 28px;
+
+  em {
+    font-style: italic;
+    color: $beige-dark;
+  }
+}
+
+// ── Divider ───────────────────────────────────────────────
+.privatisation-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: rgba($beige-dark, 0.5);
+  }
+
+  &__dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $green-light;
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+}
+
+// ── Paragraphe ────────────────────────────────────────────
 .privatisation-p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba($beige-card, 0.8);
+  margin-bottom: 32px;
+  max-width: 460px;
+}
+
+// ── Tags ──────────────────────────────────────────────────
+.privatisation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 40px;
 }
 
-.privatisation-image {
-  flex: 1;
+.privatisation-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba($beige-card, 0.1);
+  border: 1px solid rgba($beige-card, 0.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba($beige-card, 0.75);
+  backdrop-filter: blur(4px);
+
+  &::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: $green-light;
+    flex-shrink: 0;
+  }
 }
 
-.privatisation-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+// ── CTA ───────────────────────────────────────────────────
+.privatisation-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: $beige-card;
+  color: $green-dark;
+  border-radius: 100px;
+  padding: 15px 38px;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: fit-content;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.28s ease;
+
+  &:hover {
+    background: $green-dark;
+    color: $beige-card;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
-/* Responsive */
+// ── Responsive ────────────────────────────────────────────
+
+// Grands écrans — un peu plus de hauteur
+@media (min-width: 1280px) {
+  .privatisation-section {
+    min-height: 620px;
+  }
+
+  .privatisation-content {
+    padding: 100px 100px;
+  }
+}
+
+// Tablette paysage
+@media (max-width: 1024px) {
+  .privatisation-section {
+    margin-top: 80px;
+    min-height: 500px;
+  }
+
+  .privatisation-content {
+    padding: 64px 56px;
+    max-width: 520px;
+  }
+
+  // Dégradé plus fort pour couvrir plus de la photo
+  .privatisation-bg::after {
+    background: linear-gradient(
+      to right,
+      rgba(15, 30, 6, 0.85) 0%,
+      rgba(15, 30, 6, 0.6) 55%,
+      rgba(15, 30, 6, 0.2) 100%
+    );
+  }
+}
+
+// Tablette portrait
 @media (max-width: 768px) {
   .privatisation-section {
-    flex-direction: column;
-    min-height: auto;
+    min-height: 520px;
+    margin-top: 60px;
   }
-  
-  .privatisation-text {
-    padding: 40px 20px;
-  }
-  
-  .privatisation-image {
-    min-height: 300px;
-  }
-}
 
+  .privatisation-content {
+    padding: 56px 40px;
+    max-width: 100%;
+  }
 
-@media (max-width: 1024px) {
-  .privatisation-text {
-    padding: 40px 32px;
+  // Sur tablette portrait, dégradé du bas pour lisibilité
+  .privatisation-bg::after {
+    background: linear-gradient(
+      to top,
+      rgba(15, 30, 6, 0.9) 0%,
+      rgba(15, 30, 6, 0.65) 50%,
+      rgba(15, 30, 6, 0.3) 100%
+    );
   }
-  .privatisation-h2 {
-    margin-top: 0;
-  }
+
   .privatisation-p {
-    margin: 0;
+    max-width: 100%;
   }
 }
-@media (max-width: 840px) {
+
+// Mobile standard
+@media (max-width: 540px) {
   .privatisation-section {
-    margin: 80px auto;
+    min-height: 600px;
+    margin-top: 40px;
+    align-items: flex-end; // texte colle au bas sur mobile
   }
-  .privatisation-h2 {
-    font-size: 28px;
+
+  .privatisation-content {
+    padding: 40px 24px 52px;
+    justify-content: flex-end;
   }
+
+  .privatisation-eyebrow {
+    font-size: 9.5px;
+  }
+
   .privatisation-p {
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .privatisation-tags {
+    margin-bottom: 28px;
+    gap: 6px;
+  }
+
+  .privatisation-tag {
+    font-size: 10.5px;
+    padding: 5px 12px;
+  }
+
+  .privatisation-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
   }
 }
+
+// Très petit mobile
+@media (max-width: 360px) {
+  .privatisation-content {
+    padding: 32px 18px 44px;
+  }
+}
+
+
+// .privatisation-section {
+//   display: flex;
+//   width: 100%;
+//   height: 530px; 
+//   margin-top: 130px;
+// }
+
+// .privatisation-text {
+//   flex: 1;
+//   background-color: #fdf8e866;
+//   // background-color: #2a4c1d; /* Couleur beige/taupe comme sur l'image */
+//   padding: 80px 60px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   border: 2px solid #2a4c1d;
+// }
+
+// .privatisation-h2 {
+//   font-size: 2.5rem;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   font-family: 'Oswald', sans-serif;
+//   margin-bottom: 30px;
+//   color: #2a4c1d;
+//   letter-spacing: 2px;
+// }
+
+// .privatisation-p {
+//   font-size: 1rem;
+//   line-height: 1.8;
+//   color: #2a4c1d;
+//   margin-bottom: 40px;
+//   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+// }
+
+// .privatisation-image {
+//   flex: 1;
+//   border: 2px solid #2a4c1d;
+// }
+
+// .privatisation-img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+// /* Responsive */
+// @media (max-width: 768px) {
+//   .privatisation-section {
+//     flex-direction: column;
+//     min-height: auto;
+//   }
+  
+//   .privatisation-text {
+//     padding: 40px 20px;
+//   }
+  
+//   .privatisation-image {
+//     min-height: 300px;
+//   }
+// }
+
+
+// @media (max-width: 1024px) {
+//   .privatisation-text {
+//     padding: 40px 32px;
+//   }
+//   .privatisation-h2 {
+//     margin-top: 0;
+//   }
+//   .privatisation-p {
+//     margin: 0;
+//   }
+// }
+// @media (max-width: 840px) {
+//   .privatisation-section {
+//     margin: 80px auto;
+//   }
+//   .privatisation-h2 {
+//     font-size: 28px;
+//   }
+//   .privatisation-p {
+//     font-size: 16px;
+//   }
+// }
 

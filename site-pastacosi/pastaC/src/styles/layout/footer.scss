@@ -83,18 +83,26 @@ footer {
     align-items: center;
     gap: 15px;
     text-align: center;
+    font-size: 8px;
   }
 
   .footer-links {
     flex-direction: column;
     gap: 10px;
+  
+  }
+
+  .footer-links a {
+    font-size: 13px;
   }
 
   .footer-concepteur {
     text-align: center;
-    font-size: 12px;
+    font-size: 9px;
   }
 }
+
+
 
 /* ============================= */
 /*  Tablette (600px - 1024px) */
@@ -116,6 +124,6 @@ footer {
 
   .footer-concepteur {
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
   }
 }

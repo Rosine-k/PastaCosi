@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Header from "../../layout/Header/header";
 import Banner from "../../components/Banner/banner";
 import bannerResa from "../../assets/resaHome.jpg";
@@ -22,70 +21,58 @@ const resaImages = [
 ];
 
 function Reservation() {
-
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
     email: "",
     telephone: "",
     date: "",
+    heure: "",
     personnes: "",
     restaurant: "",
-    remarques: ""
+    remarques: "",
+    website: "" // honeypot anti-bot
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (formData.website) {
-    return; // bot détecté
-  }
+    // Anti-bot honeypot
+    if (formData.website) return;
 
-  if (!e.target.checkValidity()) {
-    e.target.reportValidity();
-    return;
-  }
-
-  try {
-    const response = await fetch("/reservation.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      alert("Réservation envoyée avec succès !");
-      setFormData({
-        nom: "",
-        prenom: "",
-        email: "",
-        telephone: "",
-        date: "",
-        personnes: "",
-        restaurant: "",
-        remarques: "",
-        website: ""
-      });
-    } else {
-      alert(data.message || "Erreur lors de l'envoi.");
+    if (!e.target.checkValidity()) {
+      e.target.reportValidity();
+      return;
     }
 
-  } catch (error) {
-    alert("Erreur serveur.");
-    console.error(error);
-  }
-};
+    try {
+      const response = await fetch("/reservation.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Réservation envoyée avec succès !");
+        setFormData({
+          nom: "", prenom: "", email: "", telephone: "",
+          date: "", heure: "", personnes: "", restaurant: "",
+          remarques: "", website: ""
+        });
+      } else {
+        alert(data.message || "Erreur lors de l'envoi.");
+      }
+    } catch (error) {
+      alert("Erreur serveur.");
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -96,117 +83,185 @@ function Reservation() {
           <h1 className="banner-title">Réservation</h1>
         </Banner>
 
-        {/* FORMULAIRE */}
         <section className="reservation-section">
-          <h2 className="reservation-title">Réserver une table</h2>
 
-          <form className="reservation-form" onSubmit={handleSubmit} noValidate>
+          <div className="reservation-card">
 
-  <div className="form-row">
-    <input
-      type="text"
-      name="nom"
-      placeholder="Nom"
-      value={formData.nom}
-      onChange={handleChange}
-      pattern="^[A-Za-zÀ-ÖØ-öø-ÿ '-]{2,}$"
-      title="Le nom ne doit contenir que des lettres"
-      required
-    />
+            {/* Ornement décoratif */}
+            <svg className="form-ornament" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+              <circle cx="26" cy="26" r="24" stroke="#2A4D14" strokeWidth="1.5"/>
+              <circle cx="26" cy="26" r="17" stroke="#2A4D14" strokeWidth="1"/>
+              <circle cx="26" cy="26" r="4" fill="#2A4D14"/>
+            </svg>
 
-    <input
-      type="text"
-      name="prenom"
-      placeholder="Prénom"
-      value={formData.prenom}
-      onChange={handleChange}
-      pattern="^[A-Za-zÀ-ÖØ-öø-ÿ '-]{2,}$"
-      title="Le prénom ne doit contenir que des lettres"
-      required
-    />
-  </div>
+            <div className="reservation-header">
+              
+              <h2 className="reservation-title">
+                Réservez <em>votre table</em>
+              </h2>
+              <h3 className="reservation-h3">non nécessaire pour les groupes inféreurs à 7 personnes</h3>
+              {/* <div className="reservation-divider">
+                <span className="reservation-divider__dot" />
+              </div> */}
+            </div>
 
-  <div className="form-row">
-    <input
-      type="email"
-      name="email"
-      placeholder="Email"
-      value={formData.email}
-      onChange={handleChange}
-      required
-    />
+            <form className="reservation-form" onSubmit={handleSubmit} noValidate>
 
-    <input
-      type="tel"
-      name="telephone"
-      placeholder="Téléphone"
-      value={formData.telephone}
-      onChange={handleChange}
-      pattern="^[0-9]{10}$"
-      title="Entrez un numéro à 10 chiffres"
-      required
-    />
-  </div>
+              {/* Nom / Prénom */}
+              <div className="form-row">
+                <div className="form-field">
+                  <label className="form-label" htmlFor="nom">Nom</label>
+                  <input
+                    id="nom" type="text" name="nom"
+                    className="form-input"
+                    placeholder="Dupont"
+                    value={formData.nom}
+                    onChange={handleChange}
+                    pattern="^[A-Za-zÀ-ÖØ-öø-ÿ '\-]{2,}$"
+                    title="Le nom ne doit contenir que des lettres"
+                    required
+                  />
+                </div>
+                <div className="form-field">
+                  <label className="form-label" htmlFor="prenom">Prénom</label>
+                  <input
+                    id="prenom" type="text" name="prenom"
+                    className="form-input"
+                    placeholder="Jean"
+                    value={formData.prenom}
+                    onChange={handleChange}
+                    pattern="^[A-Za-zÀ-ÖØ-öø-ÿ '\-]{2,}$"
+                    title="Le prénom ne doit contenir que des lettres"
+                    required
+                  />
+                </div>
+              </div>
 
-  <div className="form-row">
-    <input
-      type="datetime-local"
-      name="date"
-      value={formData.date}
-      onChange={handleChange}
-      min={new Date().toISOString().slice(0,16)}
-      required
-    />
+              {/* Email / Téléphone */}
+              <div className="form-row">
+                <div className="form-field">
+                  <label className="form-label" htmlFor="email">Email</label>
+                  <input
+                    id="email" type="email" name="email"
+                    className="form-input"
+                    placeholder="votre@email.fr"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-field">
+                  <label className="form-label" htmlFor="telephone">Téléphone</label>
+                  <input
+                    id="telephone" type="tel" name="telephone"
+                    className="form-input"
+                    placeholder="06 00 00 00 00"
+                    value={formData.telephone}
+                    onChange={handleChange}
+                    pattern="^[0-9]{10}$"
+                    title="Entrez un numéro à 10 chiffres"
+                    required
+                  />
+                </div>
+              </div>
 
-    <input
-      type="number"
-      name="personnes"
-      placeholder="Nombre de personnes"
-      min="1"
-      max="20"
-      value={formData.personnes}
-      onChange={handleChange}
-      required
-    />
-  </div>
+              {/* Date / Heure */}
+              <div className="form-row">
+                <div className="form-field">
+                  <label className="form-label" htmlFor="date">Date</label>
+                  <input
+                    id="date" type="date" name="date"
+                    className="form-input"
+                    value={formData.date}
+                    onChange={handleChange}
+                    min={new Date().toISOString().slice(0, 10)}
+                    required
+                  />
+                </div>
+                <div className="form-field">
+                  <label className="form-label" htmlFor="heure">Heure</label>
+                  <input
+                    id="heure" type="time" name="heure"
+                    className="form-input"
+                    value={formData.heure}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
 
-  <div className="form-row">
-    <select
-      name="restaurant"
-      value={formData.restaurant}
-      onChange={handleChange}
-      required
-    >
-      <option value="">Choisissez un restaurant</option>
-      <option value="Pasta Cosi - Paris 19ème">
-        Pasta Cosi - Paris 19ème
-      </option>
-      <option value="Pasta Cosi - Asnières">
-        Pasta Cosi - Asnières-sur-Seine
-      </option>
-    </select>
-  </div>
+              {/* Couverts / Restaurant */}
+              <div className="form-row">
+                <div className="form-field">
+                  <label className="form-label" htmlFor="personnes">Nombre de personnes</label>
+                  <input
+                    id="personnes" type="number" name="personnes"
+                    className="form-input"
+                    placeholder="2"
+                    min="1" max="20"
+                    value={formData.personnes}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-field">
+                  <label className="form-label" htmlFor="restaurant">Restaurant</label>
+                  <select
+                    id="restaurant" name="restaurant"
+                    className="form-select"
+                    value={formData.restaurant}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Choisissez</option>
+                    <option value="Pasta Cosi - Paris 19ème">Paris 19ème</option>
+                    <option value="Pasta Cosi - Asnières">Asnières-sur-Seine</option>
+                  </select>
+                </div>
+              </div>
 
-  {/* Honeypot anti-bot invisible */}
-  <input
-    type="text"
-    name="website"
-    style={{ display: "none" }}
-    onChange={handleChange}
-  />
+              {/* Séparateur */}
+              <div className="form-divider">
+                <span className="form-divider__dot" />
+              </div>
 
-  <textarea
-    name="remarques"
-    placeholder="Remarques (optionnel)"
-    value={formData.remarques}
-    onChange={handleChange}
-  ></textarea>
+              {/* Remarques */}
+              <div className="form-row form-row--full">
+                <div className="form-field">
+                  <label className="form-label" htmlFor="remarques">Message (optionnel)</label>
+                  <textarea
+                    id="remarques" name="remarques"
+                    className="form-textarea"
+                    placeholder="Allergie, occasion spéciale, demande particulière…"
+                    value={formData.remarques}
+                    onChange={handleChange}
+                    maxLength={500}
+                  />
+                </div>
+              </div>
 
-  <button type="submit" className="btn-submit">
-    Envoyer la réservation
-  </button>
+              {/* Honeypot anti-bot — invisible */}
+              <input
+                type="text"
+                name="website"
+                style={{ display: "none" }}
+                onChange={handleChange}
+                tabIndex="-1"
+                autoComplete="off"
+              />
 
-</form>
+              {/* Bouton */}
+              <div className="form-footer">
+                <button type="submit" className="btn-submit">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/>
+                  </svg>
+                  Envoyer votre demande de réservation
+                </button>
+              </div>
+
+            </form>
+          </div>
         </section>
 
         <Galerie images={resaImages} />
@@ -219,46 +274,3 @@ function Reservation() {
 
 export default Reservation;
 
-
-// import React from 'react';
-// import { useState } from "react";
-// import Header from "../../layout/Header/header";
-// import Banner from "../../components/Banner/banner";
-// import bannerResa from "../../assets/navig2.jpg";
-// import Galerie from "../../components/Galerie/galerie";
-// import Footer from "../../layout/Footer/footer";
-// import Resa1 from "../../assets/reservation/resto1.jpg";
-// import Resa2 from "../../assets/reservation/resto2.jpg";
-// import Resa3 from "../../assets/reservation/resto3.jpg";
-// import Resa4 from "../../assets/reservation/resto4.jpg";
-// import Resa5 from "../../assets/reservation/resto5.jpg";
-// import Resa6 from "../../assets/reservation/resto6.jpg";
-// import Resa7 from "../../assets/reservation/resto7.jpg";
-// import Resa8 from "../../assets/reservation/resto8.jpg";
-// import Resa9 from "../../assets/reservation/resto9.jpg";
-
-// const resaImages = [
-//   Resa1, Resa2, Resa3, Resa4, Resa5,
-//   Resa6, Resa7, Resa8, Resa9
-// ];
-
-// function Reservation() {
-//   return (
-//     <>
-//       <Header />
-//       <main className="main">
-//         <Banner className="banner" image={bannerResa} alt="bannermenu">
-//           <h1 className="banner-title">Réservation</h1>
-//         </Banner>
-
-        
-       
-
-//         <Galerie images={resaImages} />
-//       </main>
-//       <Footer />
-//     </>
-//   );
-// }
-
-// export default Reservation;
