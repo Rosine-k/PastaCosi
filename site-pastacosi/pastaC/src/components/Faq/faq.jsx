@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const faqData = [
   {
     question: "Vos viandes sont-elles Halal ?",
-    answer: "Oui, toutes nos viandes sont Halal et notre certification est AVS et Achahada .",
+    answer: "Oui, toutes nos viandes sont Halal et notre certification est AVS et Achahada.",
   },
   {
     question: "Est-il nécessaire de réserver une table avant de venir ?",

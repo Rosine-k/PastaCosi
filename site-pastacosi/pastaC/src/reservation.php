@@ -6,7 +6,7 @@ header("Content-Type: application/json");
 $data = json_decode(file_get_contents("php://input"), true);
 
 // Validation serveur
-$required = ["nom","prenom","email","telephone","date","personnes","restaurant"];
+$required = ["nom","prenom","email","telephone","date","heure","personnes","restaurant"];
 
 foreach ($required as $field) {
     if (empty($data[$field])) {
@@ -34,6 +34,7 @@ $prenom = htmlspecialchars($data["prenom"]);
 $email = htmlspecialchars($data["email"]);
 $telephone = htmlspecialchars($data["telephone"]);
 $date = htmlspecialchars($data["date"]);
+$heure = htmlspecialchars($data["heure"]);
 $personnes = htmlspecialchars($data["personnes"]);
 $restaurant = htmlspecialchars($data["restaurant"]);
 $remarques = htmlspecialchars($data["remarques"] ?? "");
@@ -51,6 +52,7 @@ $message = "
 <p><strong>Email :</strong> $email</p>
 <p><strong>Téléphone :</strong> $telephone</p>
 <p><strong>Date :</strong> $date</p>
+<p><strong>Heure :</strong> $heure</p>
 <p><strong>Personnes :</strong> $personnes</p>
 <p><strong>Remarques :</strong> $remarques</p>
 ";
