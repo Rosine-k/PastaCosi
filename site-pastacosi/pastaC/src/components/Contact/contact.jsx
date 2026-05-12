@@ -5,7 +5,8 @@ import Logo from "../../assets/logo-contact.png";
 const restaurants = [
   {
     id: 1,
-    city: "Paris",
+    name: "Pasta Cosi",
+    city: "Paris 19ème",
     address: "78 avenue de Flandre 75019 Paris",
     phone: "+33 07 62 20 90 33",
     email: "contact@pasta-cosi.com",
@@ -18,8 +19,9 @@ const restaurants = [
   },
   {
     id: 2,
+    name: "Pasta Cosi",
     city: "Asnières-sur-Seine",
-    address: "101 Quai du Dr Dervaux, 92600 Asnières-sur-Seine",
+    address: "101 Quai du Dr Dervaux 92600 Asnières-sur-Seine",
     phone: "+33 7 62 20 90 33",
     email: "contact@pasta-cosi.com",
     hours: [
@@ -28,6 +30,20 @@ const restaurants = [
       { days: "Dimanche", time: "12h – 00h" },
     ],
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.0!2d2.2860!3d48.9140!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e665!2s101%20Quai%20du%20Dr%20Dervaux%2C%2092600%20Asni%C3%A8res!5e0!3m2!1sfr!2sfr",
+  },
+  {
+    id: 3,
+    name: "The Kitchen by Pasta Cosi", 
+    city: "Paris 20ème",
+    address: "12 rue du Surmelin 75020 Paris",
+    phone: "+33 07 62 20 90 33",
+    email: "contact@pasta-cosi.com",
+    hours: [
+      { days: "Lundi – Jeudi", time: "12h – 00h" },
+      { days: "Vendredi – Samedi", time: "12h – 01h" },
+      { days: "Dimanche", time: "12h – 00h" },
+    ],
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.48608321091!2d2.3998889759622553!3d48.86800950003017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d9a64ba2693%3A0x7cf6beb3d9d53a50!2s12%20Rue%20du%20Surmelin%2C%2075020%20Paris!5e0!3m2!1sfr!2sfr!4v1774872969368!5m2!1sfr!2sfr",
   },
 ];
 
@@ -81,7 +97,7 @@ export default function Contact() {
               onClick={() => setActive(i)}
             >
               <span className="contact-tab__dot" />
-              Pasta Cosi {r.city}
+              {r.name} {r.city}
             </button>
           ))}
         </div>
@@ -100,7 +116,7 @@ export default function Contact() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title={`Carte Pasta Cosi ${resto.city}`}
+            title={`Carte ${resto.name} ${resto.city}`}
           />
         </div>
 
@@ -108,7 +124,7 @@ export default function Contact() {
         <div className="contact-info">
 
           <div className="contact-info__city">
-            <span className="contact-info__city-label">Pasta Cosi</span>
+            <span className="contact-info__city-label">{resto.name}</span>
             <span className="contact-info__city-name">{resto.city}</span>
           </div>
 
@@ -178,80 +194,3 @@ export default function Contact() {
     </section>
   );
 }
-
-// import React from 'react';
-// export default function Contac() {
-//   return (
-//     <section className="contact-section">
-//       <div className="contact-section-inner">
-//    <div className="contact-map">
-        
-//       <iframe 
-//         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5246.731582524113!2d2.373044775963564!3d48.889365598526865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dd134434585%3A0x16b7d31e4d0bb848!2s78%20Av.%20de%20Flandre%2C%2075019%20Paris!5e0!3m2!1sfr!2sfr!4v1769297276398!5m2!1sfr!2sfr" 
-//         width="100%" 
-//         height="100%" 
-//         style={{ border: 0 }}
-//         allowFullScreen 
-//         loading="lazy" 
-//         referrerPolicy="no-referrer-when-downgrade"
-//         title="Carte du restaurant PASTA COSI"
-//         >
-
-//       </iframe>
-         
-//       </div>
-
-//       <div className="contact-info">
-//         <div className='contact-container'>
-//           <h2 className="contact-title">
-//             <span className='contact-stroke'>PASTA COSI</span> 
-//             <span className='contact-fill'>PASTA COSI</span> 
-//           </h2>
-
-//         </div>
-        
-        
-//         <hr />
-       
-//         <div className="contact-text">
-//           <p><strong>ADRESSE</strong></p>
-//           <p>78 avenue de Flandre 75019 Paris</p>
-          
-//         </div>
-        
-//         <hr />
-        
-//         <div className="contact-text">
-//           <p> <strong>TÉLÉPHONE</strong><br /></p>
-//           <p>07 62 20 90 33</p>
-          
-//         </div>
-        
-//         <hr />
-        
-//         <div className="contact-text">
-
-//           <p><strong>EMAIL</strong><br /></p>
-//           <p>contact@pastacosi.fr</p>
-          
-//         </div>
-        
-//         <hr />
-        
-//         <div className="contact-text">
-//         <p><strong>HORAIRES</strong><br /></p>
-//         <p>Lundi au Jeudi - 12h à 00h<br />
-//           Vendredi et Samedi - 12h à 01h<br />
-//           Dimanche - 12h à 00h
-//           </p>
-          
-
-//         </div>
-        
-        
-//       </div>
-//       </div>
-   
-//     </section>
-//   );
-// }

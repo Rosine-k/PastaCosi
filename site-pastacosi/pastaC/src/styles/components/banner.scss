@@ -48,12 +48,9 @@
   transform: translate(-50%, -50%);
   color: white;
   font-size: 64px;
-  text-transform: uppercase;
   letter-spacing: 4px;
-  font-family: 'Montserrat', sans-serif;
-  // background: rgba(0, 0, 0, 0.3);
-  // padding: 16px 32px;
-  // border: 1px solid white;
+  font-family: "Amoresa", serif;
+ 
   z-index: 2;
   margin: 0;
 
@@ -65,7 +62,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* Intensité de l’effet foncé */
+  background: rgba(0, 0, 0, 0.45); 
   z-index: 1;
 }
 
@@ -102,14 +99,6 @@
     max-width: 90%;
     line-height: 1.2;
   }
-    /* Bannière uniquement sur la page d'accueil */
-  // .banner--home .banner__img {
-  //   height: 100vh;     
-  //   min-height: 600px; 
-  // }
+  
 }
-// @media (max-width: 440px) {
-//   main {
-//     padding-top: 108px;
-//   }
-// }
+

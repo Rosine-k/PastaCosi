@@ -7,7 +7,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // hauteur du banner (ajuste si besoin)
+      
       if (window.scrollY > 200) {
         setIsScrolled(true);
       } else {

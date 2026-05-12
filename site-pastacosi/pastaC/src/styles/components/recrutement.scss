@@ -4,16 +4,16 @@
   width: 100%;
   min-height: 70vh; 
   display: flex;
-  align-items: center;     /* centre vertical */
-  justify-content: center; /* centre horizontal */
+  align-items: center;     
+  justify-content: center; 
   text-align: center;
   padding: 1.5rem;
 }
 
 .recrutement-content {
-  max-width: 700px;   /* limite largeur */
+  max-width: 700px;   
   margin: 0 auto; 
-  padding-right: 30px;    /* centre horizontalement */
+  padding-right: 30px;    
 }
 
 .recrutement-bloc h2 {
@@ -63,7 +63,7 @@
 @media (max-width: 600px) {
   .recrutement-bloc {
     padding: 1.5rem;
-    min-height: 60vh; /* un peu moins haut sur mobile */
+    min-height: 60vh; 
   }
 
   .recrutement-bloc h2 {
